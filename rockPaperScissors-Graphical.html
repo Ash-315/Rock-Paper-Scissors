@@ -2,12 +2,50 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3e19dda209.js" crossorigin="anonymous"></script>
     <head>
         <title>Rock Paper Scissors</title>
         <meta charset="UTF-8"/>
     </head>
     <body>
-        <h1>Rock Paper Scissors</h1>
+        <header>
+            <h1>Rock Paper Scissors</h1>
+        </header>
+        <div class="scoreboard">
+            <div class="score-tally">
+                <div class="player-score">
+                    <p id="player-score">Player: 0</p>
+                </div>
+                <div class="computer-score">
+                    <p id="computer-score">Computer: 0</p>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="player-buttons">
+                <button class="symbols" id="rock">
+                    <i class="far fa-hand-scissors"></i>
+                </button>
+                <button class="symbols" id="paper">
+                    <i class="far fa-hand-paper"></i>
+                </button>
+                <button class="symbols" id="scissors">
+                    <i class="far fa-hand-rock"></i>
+                </button>
+            </div>
+            <div class="computer-buttons">
+                <button class="symbols" id="rock">
+                    <i class="far fa-hand-scissors"></i>
+                </button>
+                <button class="symbols" id="paper">
+                    <i class="far fa-hand-paper"></i>
+                </button>
+                <button class="symbols" id="scissors">
+                    <i class="far fa-hand-rock"></i>
+                </button>
+            </div>
+        </div>
     </body>
 </html>
-<script type="text/JavaScript"></script>
+<script type="text/JavaScript" src="runcode.js"></script>
