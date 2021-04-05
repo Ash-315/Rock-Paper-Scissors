@@ -1,9 +1,37 @@
 body {
-    background-color: antiquewhite;
+    background-color: rgb(10, 10, 39);
 }
 h1 {
-    padding-top: 30px;
     font-size: 60px;
     text-align: center;
     font-family: 'Cairo', sans-serif;
+    color: white;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1000;
+    font-size: 30px;
+    color: white;
+}
+button {
+    background-color: turquoise;
+    cursor: pointer;
+    padding: 30px;
+    border-radius: 25px;
+    border-width: 10px;
+    border-color: teal;
+}
+button:hover {
+    opacity: 0.5;
+}
+.score-tally {
+    display: flex;
+    justify-content: space-around;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.far {
+    font-size: 30px;
 }
