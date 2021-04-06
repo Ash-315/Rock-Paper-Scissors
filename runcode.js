@@ -40,10 +40,9 @@ function rounds(playerSelection) {
 
 // "game()" is where the user inputs their answer and the overall outcome of the game is decided
 function game(selection) {
-    for(var i = 0; i < 5; i++) {
-        let userValue = selection;
-        console.log(rounds(userValue)); // prints round result
-    }
+    let userValue = selection;
+    console.log(rounds(userValue)); // prints round result
+    
     // following statements print the end outcome of the overall game
     if(playerScore > computerScore) {
         console.log("Congratulations, you won the game!")
@@ -57,6 +56,12 @@ function game(selection) {
 }
 
 // runs the game() function on click (supposed to...)
-rock_player_btn.addEventListener('click', game(value[0]));
-paper_player_btn.addEventListener('click', game(value[1]));
-scissors_player_btn.addEventListener('click', game(value[2]));
+rock_player_btn.addEventListener('click', () => {
+    game(value[0]);
+});
+paper_player_btn.addEventListener('click', () => {
+    game(value[1]);
+});
+scissors_player_btn.addEventListener('click', () => {
+    game(value[2]);
+});
