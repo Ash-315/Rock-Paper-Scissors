@@ -1,6 +1,6 @@
 playerScore = 0; // variable to hold the player's score
 computerScore = 0; // variable to hold the computer's score
-const value = ["Rock", "Scissors", "Paper"]; // an array of answers to choose from
+const value = ["Rock", "Paper", "Scissors"]; // an array of answers to choose from
 
 round_num = 0; // counter to check round number
 
