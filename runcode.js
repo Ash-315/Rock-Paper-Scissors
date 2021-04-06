@@ -1,6 +1,8 @@
 playerScore = 0; // variable to hold the player's score
 computerScore = 0; // variable to hold the computer's score
-const value = ["Rock", "Scissors", "Paper"]; // an array of answers to choose from, for the computer
+const value = ["Rock", "Scissors", "Paper"]; // an array of answers to choose from
+
+round_num = 0; // counter to check round number
 
 //Event listeners for both player and computer
 const rock_player_btn = document.querySelector('#rock');
@@ -24,38 +26,56 @@ function rounds(playerSelection) {
     // this "if" statement says the player won 
     if( (playerSelection == "Rock" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Rock")) {
         playerScore++;
-        result = "Congratulations! You won this round as " + playerSelection + " beats " + computerSelection + ". Your score is " + playerScore + " and computer score is " + computerScore + ".";
+        result = "Congratulations! You won this round as " + playerSelection + " beats " + computerSelection;
+
+        const player_score = document.querySelector('#player-score');
+        player_score.textContent = "Player: " + playerScore;
     }
     // this statement says the player lost
     else if( (playerSelection == "Scissors" && computerSelection == "Rock") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Rock" && computerSelection == "Paper") ){
         computerScore++;
-        result = "You lose! Because " + computerSelection + " beats " + playerSelection + ". Computer score is " + computerScore + " and your score is " + playerScore;
+        result = "You lose! Because " + computerSelection + " beats " + playerSelection;
+
+        const computer_score = document.querySelector('#computer-score');
+        computer_score.textContent = "Computer: " + computerScore;
     }
     // the round ended in a tie
     else {
-        result = "This round is a tie because " + playerSelection + " doesn't beat nor lose to itself. Your score is " + playerScore + " and computer score is " + computerScore;
+        result = "This round is a tie because " + playerSelection + " doesn't beat nor lose to itself.";
     }
+    round_num++; // round number increases after each round completes
     return result;
 }
 
 // "game()" is where the user inputs their answer and the overall outcome of the game is decided
 function game(selection) {
     let userValue = selection;
-    console.log(rounds(userValue)); // prints round result
-    
+
+    const result_text = document.querySelector('#result-text');
+    result_text.textContent = (rounds(userValue)); // prints round result
+
     // following statements print the end outcome of the overall game
-    if(playerScore > computerScore) {
-        console.log("Congratulations, you won the game!")
+    if(playerScore === 5) {
+        result_text.textContent = "Congratulations, you won the game!";
+        button_disable();
+        
+        const player_disable = document.querySelector('.buttons'); // removes cursor pointer 
+        player_disable.classList.toggle('player-buttons-game-over');
     }
-    else if(playerScore < computerScore) {
-        console.log("Aww, you lost :( Better luck next time.")
-    }
-    else {
-        console.log("This game has ended in a draw. Maybe next time...");
+    else if(computerScore === 5) {
+        result_text.textContent = "Aww, you lost :( " + "\n" + "Better luck next time.";
+        button_disable();
     }
 }
 
-// runs the game() function on click (supposed to...)
+function button_disable() { // disables the buttons once the game is over
+    const buttons = document.querySelectorAll('button'); 
+    buttons.forEach((button) => {
+        button.disabled = true;
+    });
+}
+
+// runs the game() function on click 
 rock_player_btn.addEventListener('click', () => {
     game(value[0]);
 });
