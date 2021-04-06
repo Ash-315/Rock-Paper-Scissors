@@ -39,16 +39,10 @@ function rounds(playerSelection) {
 }
 
 // "game()" is where the user inputs their answer and the overall outcome of the game is decided
-function game() {
+function game(selection) {
     for(var i = 0; i < 5; i++) {
-        let userValue = buttons();
-        if ( (userValue == "Rock") || (userValue == "Paper") || (userValue == "Scissors") ) { // ensures that answers provided aren't "false"
-            console.log(rounds(userValue)) // returns the outcome of each round;
-        }
-        else {
-            console.log("This answer is invalid. Please reload the game and input valid choices.")
-            return;
-        }
+        let userValue = selection;
+        console.log(rounds(userValue));
     }
     // following statements print the end outcome of the overall game
     if(playerScore > computerScore) {
@@ -62,19 +56,6 @@ function game() {
     }
 }
 
-function buttons() {
-    const btn_rock = document.querySelector('#rock');
-    btn_rock.addEventListener('click', () => {
-        return value[0];
-    });
-    const btn_paper = document.querySelector('#paper');
-    btn_paper.addEventListener('click', () => {
-        return value[1];
-    });
-    const btn_scissors = document.querySelector('#scissors');
-    btn_scissors.addEventListener('click', () => {
-        return value[2];
-    });
-}
-
-game(); // "game()" function is called and is where everything starts
+rock_player_btn.addEventListener('click', game(value[0]));
+paper_player_btn.addEventListener('click', game(value[1]));
+scissors_player_btn.addEventListener('click', game(value[2]));
