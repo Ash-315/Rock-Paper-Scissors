@@ -29,6 +29,10 @@ button {
     cursor: not-allowed;
     pointer-events: none;
 }
+.player-buttons-game-over {
+    cursor: not-allowed;
+    pointer-events: none;
+}
 .score-tally {
     display: flex;
     justify-content: space-around;
@@ -36,6 +40,9 @@ button {
 .buttons {
     display: flex;
     justify-content: space-around;
+}
+.result {
+    text-align: center;
 }
 .far {
     font-size: 30px;
