@@ -15,14 +15,19 @@ p {
 }
 button {
     background-color: turquoise;
-    cursor: pointer;
     padding: 30px;
     border-radius: 25px;
     border-width: 10px;
     border-color: teal;
 }
-button:hover {
-    opacity: 0.5;
+.player-buttons button:hover {
+    cursor: pointer;
+    opacity: 1;
+    background-color: rgb(43, 179, 179);
+}
+.computer-buttons {
+    cursor: not-allowed;
+    pointer-events: none;
 }
 .score-tally {
     display: flex;
