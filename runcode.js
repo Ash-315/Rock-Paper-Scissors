@@ -2,6 +2,15 @@ playerScore = 0; // variable to hold the player's score
 computerScore = 0; // variable to hold the computer's score
 const value = ["Rock", "Scissors", "Paper"]; // an array of answers to choose from, for the computer
 
+//Event listeners for both player and computer
+const rock_player_btn = document.querySelector('#rock');
+const paper_player_btn = document.querySelector('#paper');
+const scissors_player_btn = document.querySelector('#scissors');
+
+const rock_comp_btn = document.querySelector('#rock-comp');
+const paper_comp_btn = document.querySelector('#paper-comp');
+const scissors_comp_btn = document.querySelector('#scissors-comp');
+
 // this function is used to get a random answer from the "value[]" array
 function computerPlay() {
     let randomvalue = value[Math.floor(Math.random() * value.length)]; 
@@ -32,7 +41,7 @@ function rounds(playerSelection) {
 // "game()" is where the user inputs their answer and the overall outcome of the game is decided
 function game() {
     for(var i = 0; i < 5; i++) {
-        let userValue = prompt("Please enter your choice");
+        let userValue = buttons();
         if ( (userValue == "Rock") || (userValue == "Paper") || (userValue == "Scissors") ) { // ensures that answers provided aren't "false"
             console.log(rounds(userValue)) // returns the outcome of each round;
         }
@@ -51,6 +60,21 @@ function game() {
     else {
         console.log("This game has ended in a draw. Maybe next time...");
     }
+}
+
+function buttons() {
+    const btn_rock = document.querySelector('#rock');
+    btn_rock.addEventListener('click', () => {
+        return value[0];
+    });
+    const btn_paper = document.querySelector('#paper');
+    btn_paper.addEventListener('click', () => {
+        return value[1];
+    });
+    const btn_scissors = document.querySelector('#scissors');
+    btn_scissors.addEventListener('click', () => {
+        return value[2];
+    });
 }
 
 game(); // "game()" function is called and is where everything starts
