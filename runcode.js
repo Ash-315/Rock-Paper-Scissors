@@ -61,11 +61,25 @@ function game(selection) {
         
         const player_disable = document.querySelector('.buttons'); // removes cursor pointer 
         player_disable.classList.toggle('player-buttons-game-over');
+
+        playagain();
     }
     else if(computerScore === 5) {
         result_text.textContent = "Aww, you lost :( " + "\n" + "Better luck next time.";
         button_disable();
+
+        playagain();
     }
+}
+
+function playagain() {
+    const result_ref = document.querySelector('#results');
+
+    const play_again = document.createElement('p');
+    play_again.classList.add('result');
+    play_again.textContent = "To play again, simply refresh the page";
+
+    result_ref.appendChild(play_again);
 }
 
 function button_disable() { // disables the buttons once the game is over
