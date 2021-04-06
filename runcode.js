@@ -42,7 +42,7 @@ function rounds(playerSelection) {
 function game(selection) {
     for(var i = 0; i < 5; i++) {
         let userValue = selection;
-        console.log(rounds(userValue));
+        console.log(rounds(userValue)); // prints round result
     }
     // following statements print the end outcome of the overall game
     if(playerScore > computerScore) {
@@ -56,6 +56,7 @@ function game(selection) {
     }
 }
 
+// runs the game() function on click (supposed to...)
 rock_player_btn.addEventListener('click', game(value[0]));
 paper_player_btn.addEventListener('click', game(value[1]));
 scissors_player_btn.addEventListener('click', game(value[2]));
