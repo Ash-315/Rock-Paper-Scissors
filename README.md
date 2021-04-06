@@ -1,4 +1,4 @@
 # Rock-Paper-Scissors
 Repo for my first project to test my skills at JavaScript
 
-Update: This project is now being updated with a graphical user interface to be user-friendly and informative
+This is a simple game of Rock, Paper and Scissors. The game runs till either the computer or you, the player, has 5 points. Once done, the game is over and the page can be refreshed to play again.
